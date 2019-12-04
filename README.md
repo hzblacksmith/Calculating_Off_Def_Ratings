@@ -1,5 +1,5 @@
 # 2019 NBA Hackathon
-## Team 4PPP - Brandon Pollack, Faizan Abdullah, Frank Li, Skyler Shi
+## Team 4PPP - Skyler Shi, Frank Li, Brandon Pollack, Faizan Abdullah
 
 To Whom It May Concern:
 
