@@ -27,7 +27,7 @@ The **Player** class is responsible for counting all the points scored, points a
 
 There existed many events / actions in the _Event\_Codes_ data given to us. We used our basketball knowledge to determine which events would be relevant to our offensive and defensive rating calculations. Here is how we treated each event programmatically:
 
-![Alt text](Write_up_pic.png?raw=true "Event Codes Treatment")
+![Alt text](writeup/Write_up_pic.png?raw=true "Event Codes Treatment")
 
 ### Treating Special Case: Substitution During Free Throws
 
