@@ -1,11 +1,11 @@
-# 2019 NBA Hackathon
+# 2019 NBA Hackathon - Calculating Offensive & Defensive Ratings
 ## Team 4PPP - Skyler Shi, Frank Li, Brandon Pollack, Faizan Abdullah
 
-To Whom It May Concern:
+This project was a first-round sprint project for the 2019 NBA hackathon. Given official NBA play-by-play data, we needed to calculate the offensive and defensive ratings for players per-game.
 
-We were very excited to program a general python script that calculates offensive and defensive ratings for any NBA game recorded into the form of play-by-play data. Here, we want to explain our methodology in approaching this problem and writing our code.
+We were given data to 82 games in `data/Play_by_Play.txt` to process, but our script is generalizable to any game.
 
-### Formula &amp; Scripting Approach
+### Understanding Offensive & Defensive Ratings
 
 We calculated the offensive rating for each player with this formula:
 
@@ -14,6 +14,18 @@ We calculated the offensive rating for each player with this formula:
 and we calculated the defensive rating with this formula:
 
 ``` Def-rating = (points allowed by team while on court) / (defensive possessions involved in) * 100 ```
+
+Knowing this, we just need to keep track of:
+
+**1) points scored/allowed by the team when the player is on the court**  and
+
+**2) number of possessions the player is part of**.
+
+Note that both of these items are unique to the player. 
+
+### Methodology
+
+We created 3 classes to help out endeavors: **`Game`**, **`Team`** and **`Player`**
 
 In terms of programming, we designed a **Game** Class that instantiates 2 **Team** Objects, which each hold 15 **Player** Objects to keep track of stats throughout the game.
 
