@@ -5,7 +5,7 @@ This project was a first-round sprint project for the 2019 NBA hackathon. Given 
 
 We were given data to 82 games in `data/Play_by_Play.txt` to process, but our script is generalizable to any game.
 
-### Understanding Offensive & Defensive Ratings
+## Understanding Offensive & Defensive Ratings
 
 We calculated the offensive rating for each player with this formula:
 
@@ -23,17 +23,15 @@ Knowing this, we just need to keep track of:
 
 Note that both of these items are unique to the player. 
 
-### Methodology
+## Methodology
 
-We created 3 classes to help out endeavors: **`Game`**, **`Team`** and **`Player`**
+We created 3 classes to help out endeavors: **`Game`**, **`Team`** and **`Player`**.
 
-In terms of programming, we designed a **Game** Class that instantiates 2 **Team** Objects, which each hold 15 **Player** Objects to keep track of stats throughout the game.
+**`Player`** instances will record the 2 items mentioned above.
+**`Team`** instances will keep track of all players and the active players (on the court) and increment their points and possession count as appropriate.
+**`Game`** instances ingests all the data needed for that one game and modifies its Team instances to reflect substitutions, points scored and more.
 
-The **Game** class is responsible for reading in the play\_by\_play data and processing each event row by row.
-
-The **Team** Class is responsible for keeping track of the team&#39;s roster for the game and the active players on the court throughout the game.
-
-The **Player** class is responsible for counting all the points scored, points allowed, offensive possessions, and defensive possessions for the player throughout the game. At the end of the game, the **Player** class returns the offensive rating and defensive rating with the formulas specified above.
+During initialization, a **`Game`** instance instantiates 2 **`Team`** instances, which each hold 15 **`Player`** instances.
 
 ### Event Codes
 
