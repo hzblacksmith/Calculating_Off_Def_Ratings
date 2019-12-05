@@ -23,7 +23,7 @@ Knowing this, we just need to keep track of:
 
 Note that both of these items are unique to the player. 
 
-![Us making sure we counted correctly](https://gph.is/1d5eKI3)
+![Us making sure we counted correctly](https://media.giphy.com/media/7MObp8FxgVDcA/giphy.gif)
 
 ## Methodology
 
