@@ -40,6 +40,7 @@ During initialization, a **`Game`** instance instantiates 2 **`Team`** instances
 There existed many events / actions in the _Event\_Codes_ data given to us. We used our basketball knowledge to determine which events would be relevant to our offensive and defensive rating calculations. Here is how we treated each event programmatically:
 
 ![Alt text](writeup/Write_up_pic.png?raw=true "Event Codes Treatment")
+Don't be like pop, count your numbers right.
 
 ### Some Minutiae: Substitution During Free Throws
 
