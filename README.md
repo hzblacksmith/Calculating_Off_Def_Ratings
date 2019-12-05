@@ -25,7 +25,7 @@ Note that both of these items are unique to the player.
 
 ## Methodology
 
-We created 3 classes to help out endeavors: **`Game`**, **`Team`** and **`Player`**.
+We created 3 classes to help our endeavors: **`Game`**, **`Team`** and **`Player`**.
 
 **`Player`** instances will record the 2 items mentioned above.
 **`Team`** instances will keep track of all players and the active players (on the court) and increment their points and possession count as appropriate.
@@ -39,26 +39,23 @@ There existed many events / actions in the _Event\_Codes_ data given to us. We u
 
 ![Alt text](writeup/Write_up_pic.png?raw=true "Event Codes Treatment")
 
-### Treating Special Case: Substitution During Free Throws
+### Some Minutiae: Substitution During Free Throws
 
-We were aware that for free throws, points scored / allowed should be attributed to the active players on the court when the foul happened, not the real active players on the court during the free throws.
+It becomes slightly problematic when a substitution happens after a foul but before a free throw. This is because the NBA officially associates that free throw point to the active players on the court before the foul occurred. Logically, those 10 players were responsible for the foul happening, and not the players subbed in.
 
-To do this, we kept track of 2 lists of active players once a foul happened. After a foul ends (last free throw finishes and shot clock continues), we continue just keeping track of 1 list of active players.
+To accomodate this, we kept track of 2 lists of active players once a foul happened. After a foul ends (last free throw finishes and shot clock continues), we would continue just keeping track of 1 list of active players.
 
-In simple, we kept two lists of players: **active\_1** and **active\_2**. **active\_1** represented the active players throughout the game except when free throws were happening. If free throws were happening, **active\_1** would list the players on the court before any substitutions happen and **active\_2** would list the players on the court factoring in the substitutions (if there were substitutions). Anytime free throws ended, **active\_2** would be moved into **active\_1** and **active\_2** would be deleted. **active\_1** would continue to keep track of the active players on the court.
+**active\_1** represented the active players throughout the game except when free throws were happening. If free throws were happening, **active\_1** would list the players on the court before any substitutions happen and **active\_2** would list the players on the court factoring in the substitutions (if there were substitutions). Anytime free throws ended, **active\_2** would be moved into **active\_1** and **active\_2** would be deleted. **active\_1** would continue to keep track of the active players on the court.
 
 We would always add points / possessions to the players in **active­\_1**. However, there is one special case in which we do add points / possessions to the players in **active\_2** : when technical free throws happen in between free throws for another type of foul (normal foul, flagrant foul, clear path foul). In this case, we believe the technical foul arose directly due to the players on court, not the players on court at the time of the other foul. Hence, we would add technical free throw points to **active\_2** in this case.
 
 ### Treating Fouls: Flagrant, Clear Path, Technical
 
-We also understood that the definition of &quot;a new possession&quot; had major implications on our analysis. Because of this, we were weary of the gray areas embedded in the parameters of what is and is not the start of a new possession. We wanted to clarify our thought process on specific areas that were not clearly defined by the prompt.
+We also understood that the definition of **&quot;a new possession&quot;** had major implications on our analysis. Here is how we handled the definitions possessions for fouls:
 
-For Flagrant and Clear Path fouls, we counted the completion of their free throws as the end of a possession. The NBA Rulebook tells us that Flagrant &amp; Clear Path fouls result in free throws and possession, so we counted completing their free throws as a separate possession.
+For Flagrant and Clear Path fouls, we counted the completion of their free throws as the end of a possession. The NBA Rulebook tells us that Flagrant and Clear Path fouls result in free throws and possession, so we counted completing their free throws as a separate possession.
 
 For technical fouls, we did not count them as a separate possession. We believe that technical free throws are a result of unsportsmanlike conduct but should not affect the possession flow of the game. Hence, we would have the completion of technical free throws not count towards a possession.
-
-If there are discrepancies between our rating numbers and the official ones, we believe it is because we understood this part differently than the official rulebook.
-
 
 
 ### Inconsistent Data for 3 Games
