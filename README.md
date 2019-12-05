@@ -23,6 +23,8 @@ Knowing this, we just need to keep track of:
 
 Note that both of these items are unique to the player. 
 
+![Us making sure we counted correctly](https://gph.is/1d5eKI3)
+
 ## Methodology
 
 We created 3 classes to help our endeavors: **`Game`**, **`Team`** and **`Player`**.
