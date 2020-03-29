@@ -1,6 +1,6 @@
 # 2019 NBA Hackathon - Calculating Offensive & Defensive Ratings
 ## Team 4PPP - Skyler Shi, Frank Li, Brandon Pollack, Faizan Abdullah
-
+#### The PDF version of the writeup can be accessed [here](writeup/Off_Def_Rating_Writeup.pdf)
 This project was a first-round sprint project for the 2019 NBA hackathon. Given official NBA play-by-play data, we needed to calculate the offensive and defensive ratings for players per-game.
 
 We were given data to 82 games in `data/Play_by_Play.txt` to process, but our script is generalizable to any game.
